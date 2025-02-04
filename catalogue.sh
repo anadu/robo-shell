@@ -16,4 +16,4 @@ systemctl enable catalogue
 systemctl start catalogue
 cp mongo.repo /etc/yum.repos.d/mongo.repo
 dnf install mongodb-mongosh -y
-mongosh --host MONGODB-SERVER-IPADDRESS </app/db/master-data.js
+mongosh --host mongo-dev.kishore.org.in </app/db/master-data.js
