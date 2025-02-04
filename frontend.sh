@@ -12,4 +12,3 @@ unzip /tmp/frontend.zip
 pwd
 ls -lrt
 systemctl restart nginx 
-cp nginx.conf  /etc/nginx/nginx.conf
