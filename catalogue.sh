@@ -1,4 +1,5 @@
 app=catalogue
+echo ${app}
 dnf module disable nodejs -y
 dnf module enable nodejs:20 -y
 dnf install nodejs -y
@@ -7,7 +8,6 @@ cp mongo.repo /etc/yum.repos.d/mongo.repo
 useradd roboshop
 rm -rf /app
 mkdir /app
-rm -rf /tmp/${app}.zip 
 curl -o /tmp/${app}.zip https://roboshop-artifacts.s3.amazonaws.com/${app}-v3.zip 
 cd /app 
 unzip /tmp/${app}.zip
