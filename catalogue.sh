@@ -1,5 +1,5 @@
 app=catalogue
-source common.sh
+source ./common.sh
 nodejs
 cp ${app}.service /etc/systemd/system/{app}.service
 cp mongo.repo /etc/yum.repos.d/mongo.repo
@@ -17,4 +17,4 @@ systemctl enable catalogue
 systemctl start catalogue
 dnf install mongodb-mongosh -y
 mongosh --host 10.0.0.5 </app/db/master-data.js
-systemctl start catalogue
+systemctl restart catalogue
