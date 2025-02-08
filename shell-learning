@@ -1,2 +1,6 @@
 kishore=10
 echo $kishore
+
+data=file1.txt
+touch $data
+cp $data fil2.txt
