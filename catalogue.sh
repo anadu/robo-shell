@@ -1,20 +1,18 @@
-app=catalogue
-echo ${app}
 dnf module disable nodejs -y
 dnf module enable nodejs:20 -y
 dnf install nodejs -y
-cp ${app}.service /etc/systemd/system/${app}.service
-cp mongo.repo /etc/yum.repos.d/mongo.repo
+cp catalogue.service /etc/systemd/system/catalogue.service
 useradd roboshop
 rm -rf /app
-mkdir /app
-curl -o /tmp/${app}.zip https://roboshop-artifacts.s3.amazonaws.com/${app}-v3.zip 
+mkdir /app 
+curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip 
 cd /app 
-unzip /tmp/${app}.zip
+unzip /tmp/catalogue.zip
 cd /app 
 npm install 
 systemctl daemon-reload
 systemctl enable catalogue 
-systemctl restart catalogue
+systemctl start catalogue
+cp mongo.repo /etc/yum.repos.d/mongo.repo
 dnf install mongodb-mongosh -y
-mongosh --host 10.0.0.5 </app/db/master-data.js
+mongosh --host MONGODB-SERVER-IPADDRESS </app/db/master-data.js
