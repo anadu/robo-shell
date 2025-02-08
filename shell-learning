@@ -1,0 +1,2 @@
+kishore=10
+echo $kishore
