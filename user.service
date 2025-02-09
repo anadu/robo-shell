@@ -1,10 +1,11 @@
+
 [Unit]
 Description = User Service
 [Service]
 User=roboshop
 Environment=MONGO=true
-Environment=REDIS_URL='redis://redis-dev.kishore.org.in:6379'
-Environment=MONGO_URL="mongodb://mongo-dev.kishore.org.in:27017/users"
+Environment=REDIS_URL='redis://10.0.0.9:6379'
+Environment=MONGO_URL="mongodb://10.0.0.5:27017/users"
 ExecStart=/bin/node /app/server.js
 SyslogIdentifier=user
 
