@@ -13,6 +13,6 @@ systemctl daemon-reload
 systemctl enable shipping 
 systemctl restart shipping
 dnf install mysql -y 
-mysql -h mssql-dev.kishore.org.in -uroot -pRoboShop@1 < /app/db/schema.sql
-mysql -h mssql-dev.kishore.org.in -uroot -pRoboShop@1 < /app/db/app-user.sql
-mysql -h mssql-dev.kishore.org.in -uroot -pRoboShop@1 < /app/db/master-data.sql
+mysql -h 10.0.0.14 -uroot -pRoboShop@1 < /app/db/schema.sql
+mysql -h 10.0.0.14 -uroot -pRoboShop@1 < /app/db/app-user.sql
+mysql -h 10.0.0.14 -uroot -pRoboShop@1 < /app/db/master-data.sql
