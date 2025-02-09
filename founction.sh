@@ -4,5 +4,8 @@
    pwd 
  }
 
+ source ./sourcefile.sh
+
  #how to call the founction  ,we can call the founction name
  sample
+ demo
